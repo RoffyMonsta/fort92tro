@@ -1,0 +1,31 @@
+# Turn on rewrite engine
+RewriteEngine On
+
+# ✅ Allow only POST to handleForm.php
+RewriteCond %{REQUEST_URI} ^/handleForm.php$
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteRule .* - [F,L]
+
+# 🚫 Deny access to all PHP files (except via POST to handleForm.php)
+<FilesMatch "\.php$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<Files "handleForm.php">
+  Order allow,deny
+  Allow from all
+</Files>
+
+# 🔐 Block access to sensitive files
+<FilesMatch "^(\.env|\.git|composer\.json|package\.json|webpack\.config\.js|.*\.bak)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# 🧪 Security headers (optional)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>

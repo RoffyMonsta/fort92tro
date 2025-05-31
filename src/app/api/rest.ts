@@ -1,9 +1,24 @@
 import axios from "axios";
 
+export interface IHandleRecruitmentForm {
+  lastName: string;
+  firstName: string;
+  middleName: string;
+  phone: string;
+  birthDate: Date;
+  socialMedia?: string;
+  desiredPosition?: string;
+  region: string;
+  isMilitary: boolean;
+  captcha: string;
+}
+
 export const REST = {
-  createTask: () => `/api/task`,
+  handleForm: () => `/handleForm.php`,
 };
-export const sendForm = async (inputData: any): Promise<string> => {
-  const result = await axios.post(REST.createTask(), inputData);
+export const handleForm = async (
+  inputData: IHandleRecruitmentForm
+): Promise<string> => {
+  const result = await axios.post(REST.handleForm(), inputData);
   return result && "success";
 };

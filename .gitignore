@@ -33,3 +33,9 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+
+build/
+
+.env
+
+.DS_Store
