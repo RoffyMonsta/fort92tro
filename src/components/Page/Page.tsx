@@ -5,10 +5,12 @@ import "./styles.scss";
 import { RecruitmentSection } from "../../features/RecruitmentSection";
 export const Page: FC = () => {
   return (
-    <main>
+    <>
       <Header />
-      <RecruitmentSection />
+      <main>
+        <RecruitmentSection />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 };

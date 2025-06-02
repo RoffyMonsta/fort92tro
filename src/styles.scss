@@ -12,12 +12,10 @@
 /* 2. Set full height and remove scroll glitches */
 html,
 body,
-#root,
-main {
+#root {
   height: 100%;
   width: 100%;
   font-family: "Montserrat", "Roboto", sans-serif;
-  background-color: #f9f9f9;
   color: #111;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -56,4 +54,8 @@ svg {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+body {
+  background: rgba(0, 0, 0, 0.7);
 }
