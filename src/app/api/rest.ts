@@ -1,15 +1,12 @@
 import axios from "axios";
 
 export interface IHandleRecruitmentForm {
-  lastName: string;
-  firstName: string;
-  middleName: string;
+  firstLastName: string;
   phone: string;
-  birthDate: Date;
+  birthDate?: Date | null;
   socialMedia?: string;
   desiredPosition?: string;
-  region: string;
-  isMilitary: boolean;
+  additionalInfo?: string;
   captcha: string;
 }
 
