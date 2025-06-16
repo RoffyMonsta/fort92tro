@@ -20,7 +20,7 @@ const navLinks = [
   { label: "Бойовий шлях", id: "path" },
   { label: "Чому ми?", id: "why" },
   { label: "Як долучитися?", id: "join" },
-  { label: "Вакансії", id: "vacancies" },
+  { label: "Посади", id: "positions" },
 ];
 
 const headerFont = {
@@ -67,15 +67,18 @@ export const Header: React.FC = () => {
           >
             {/* Logo */}
             <Box display="flex" alignItems="center" sx={{ flexShrink: 0 }}>
-              <a href="#" style={{ display: "flex", alignItems: "center" }}>
-                <MainLogo
-                  style={{
-                    height: 42,
-                    width: 42,
-                    cursor: "pointer",
-                  }}
-                />
-              </a>
+              <MainLogo
+                onClick={() => {
+                  document
+                    .getElementById("hero")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                style={{
+                  height: 42,
+                  width: 42,
+                  cursor: "pointer",
+                }}
+              />
             </Box>
 
             {/* Desktop Nav */}
@@ -114,6 +117,12 @@ export const Header: React.FC = () => {
                   ...headerFont,
                   color: "#B9C686",
                   backgroundColor: "#263416",
+                }}
+                onClick={() => {
+                  document
+                    .getElementById("support")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  setDrawerOpen(false);
                 }}
               >
                 Підтримати
@@ -197,6 +206,12 @@ export const Header: React.FC = () => {
                   ...headerFont,
                   color: "#B9C686",
                   backgroundColor: "#263416",
+                }}
+                onClick={() => {
+                  document
+                    .getElementById("support")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  setDrawerOpen(false);
                 }}
               >
                 Підтримати

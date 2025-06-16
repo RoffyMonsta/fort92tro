@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 export const HeroSection: React.FC = () => {
   return (
     <Box
+      id="hero"
       component="section"
       sx={{
         position: "relative",

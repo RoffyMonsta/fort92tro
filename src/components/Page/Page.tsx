@@ -10,6 +10,10 @@ import { WhyUsSection } from "../../features/WhyUsSection/WhyUsSection";
 import { FacebookNewsSection } from "../../features/FacebookNewsSection";
 import { HowToJoinSection } from "../../features/HowToJoinSection";
 import { SliderSection } from "../../features/SliderSection/SliderSection";
+import { PositionsSection } from "../../features/PositionsSection";
+import { InterviewSliderSection } from "../../features/InterviewSliderSection";
+import { FaqSection } from "../../features/FaqSection/FaqSection";
+import { SupportSection } from "../../features/SupportSection/SupportSection";
 export const Page: FC = () => {
   return (
     <>
@@ -23,6 +27,10 @@ export const Page: FC = () => {
         {/* < FacebookNewsSection /> */}
         <RecruitmentSection />
         <SliderSection />
+        <PositionsSection />
+        <InterviewSliderSection />
+        <FaqSection />
+        <SupportSection />
       </main>
       <Footer />
     </>

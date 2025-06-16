@@ -12,7 +12,7 @@ header('Content-Type: application/json');
 // Зчитування JSON-тіла запиту
 $input = json_decode(file_get_contents('php://input'), true);
 
-if (!$input || !isset($input['firstName']) || !isset($input['phone']) || !isset($input['captcha'])) {
+if (!$input || !isset($input['firstLastName']) || !isset($input['phone']) || !isset($input['captcha'])) {
     http_response_code(400);
     echo json_encode(["status" => "error", "message" => "Missing required fields"]);
     exit;
@@ -49,35 +49,31 @@ try {
 
 // SQL-запит на вставку
 $sql = "INSERT INTO recruitment_forms (
-    last_name, first_name, middle_name, phone, birth_date, social_media, desired_position, region, is_military
+    first_last_name, phone, birth_date, social_media, desired_position, additional_info
 ) VALUES (
-    :lastName, :firstName, :middleName, :phone, :birthDate, :socialMedia, :desiredPosition, :region, :isMilitary
+    :firstLastName, :phone, :birthDate, :socialMedia, :desiredPosition, :additionalInfo
 )";
+
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    ':lastName'   => $input['lastName'],
-    ':firstName'  => $input['firstName'],
-    ':middleName' => $input['middleName'],
-    ':phone'      => $input['phone'],
-    ':birthDate'  => date('Y-m-d', strtotime($input['birthDate'])),
-    ':socialMedia'   => $input['socialMedia'] ?? null,
-    ':desiredPosition' => $input['desiredPosition'] ?? null,
-    ':region'     => $input['region'],
-    ':isMilitary' => $input['isMilitary'] ? true : false,
+    ':firstLastName'     => $input['firstLastName'],
+    ':phone'             => $input['phone'],
+    ':birthDate'         => date('Y-m-d', strtotime($input['birthDate'])),
+    ':socialMedia'       => $input['socialMedia'] ?? null,
+    ':desiredPosition'   => $input['desiredPosition'] ?? null,
+    ':additionalInfo'    => $input['additionalInfo'] ?? null,
 ]);
+
 
 // Повідомлення в Telegram
 $message = "📋 Нова заявка з форми:\n\n";
-$message .= "👤 Ім’я: " . $input['firstName'] . "\n";
-$message .= "👤 Прізвище: " . $input['lastName'] . "\n";
-$message .= "👤 По батькові: " . $input['middleName'] . "\n";
+$message .= "👤 Ім’я та прізвище: " . $input['firstLastName'] . "\n";
 $message .= "📞 Телефон: " . $input['phone'] . "\n";
 $message .= "🎂 Дата народження: " . date('d.m.Y', strtotime($input['birthDate'])) . "\n";
-$message .= "🌍 Область: " . $input['region'] . "\n";
-$message .= "💂 Військовослужбовець: " . ($input['isMilitary'] ? 'Так' : 'Ні') . "\n";
 $message .= "💬 Посилання на соц. мережі: " . ($input['socialMedia'] ?: '—') . "\n";
 $message .= "💂 Бажана посада: " . ($input['desiredPosition'] ?: '—') . "\n";
+$message .= "📝 Додаткова інформація: " . ($input['additionalInfo'] ?: '—') . "\n";
 
 $sendUrl = "https://api.telegram.org/bot$botToken/sendMessage";
 
