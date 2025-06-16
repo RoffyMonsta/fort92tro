@@ -139,7 +139,6 @@ export const RecruitmentForm: React.FC = () => {
 
   return (
     <Box
-      id="recruitment-form"
       component="form"
       onSubmit={handleSubmit(handleTrimmedSubmit)}
       sx={{ display: "flex", flexDirection: "column", gap: 3, width: "100%" }}

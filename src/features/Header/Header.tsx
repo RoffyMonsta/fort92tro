@@ -127,7 +127,7 @@ export const Header: React.FC = () => {
                 }}
                 onClick={() => {
                   document
-                    .getElementById("recruitment-form")
+                    .getElementById("recruitment")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
@@ -211,7 +211,7 @@ export const Header: React.FC = () => {
                 }}
                 onClick={() => {
                   document
-                    .getElementById("recruitment-form")
+                    .getElementById("recruitment")
                     ?.scrollIntoView({ behavior: "smooth" });
                   setDrawerOpen(false);
                 }}

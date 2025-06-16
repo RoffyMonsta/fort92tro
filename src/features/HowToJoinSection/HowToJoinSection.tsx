@@ -113,7 +113,7 @@ export const HowToJoinSection: React.FC = () => (
           }}
           onClick={() => {
             document
-              .getElementById("recruitment-form")
+              .getElementById("recruitment")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
         >
