@@ -52,7 +52,17 @@ export const RecruitmentForm: React.FC = () => {
     setValue,
     reset,
     formState: { errors },
-  } = useForm<RecruitmentFormData>({});
+  } = useForm<RecruitmentFormData>({
+    defaultValues: {
+      firstLastName: "",
+      phone: "",
+      birthDate: undefined,
+      socialMedia: "",
+      desiredPosition: "",
+      additionalInfo: "",
+      captcha: null,
+    },
+  });
 
   const [calendarOpen, setCalendarOpen] = useState(false);
   const toast = useToast();
@@ -103,7 +113,7 @@ export const RecruitmentForm: React.FC = () => {
       socialMedia: data.socialMedia,
       desiredPosition: data.desiredPosition,
       additionalInfo: data.additionalInfo,
-      captcha: data.captcha,
+      captcha: data.captcha!,
     };
     const result = await handleForm(input);
     if (result === "success") {
@@ -113,7 +123,10 @@ export const RecruitmentForm: React.FC = () => {
       });
       // Reset form or redirect user
       reset();
-      // Reset form or redirect user
+
+      if ((window as any).grecaptcha) {
+        (window as any).grecaptcha?.reset();
+      }
     } else {
       toast({
         message: "Сталася помилка при надсиланні заявки. Спробуйте ще раз.",
