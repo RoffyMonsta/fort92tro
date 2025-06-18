@@ -41,12 +41,11 @@ export const Footer: React.FC = () => {
       gap={{ xs: 6, md: 4 }}
       sx={{
         backgroundColor: "#1D1D1D",
-        color: "#FFFFFF",
+        color: "#EBEBEB",
         px: { xs: 2, md: 8 },
         py: { xs: 4, md: 8 },
       }}
     >
-      {/* Navigation and socials */}
       <Box
         sx={{
           display: "flex",
@@ -98,8 +97,6 @@ export const Footer: React.FC = () => {
           </IconButton>
         </Stack>
       </Box>
-
-      {/* Contact info */}
       <Box
         sx={{
           display: "flex",
@@ -134,7 +131,6 @@ export const Footer: React.FC = () => {
         <Typography sx={sharedTextSx}>Тарас Хміль</Typography>
       </Box>
 
-      {/* CTA and logo */}
       <Box
         display="flex"
         flexDirection="column"

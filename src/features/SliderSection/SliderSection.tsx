@@ -54,6 +54,7 @@ export const SliderSection: React.FC = () => (
         <SwiperSlide key={slide.id}>
           <Box
             component="img"
+            loading="lazy"
             src={slide.src}
             alt={slide.alt}
             sx={{

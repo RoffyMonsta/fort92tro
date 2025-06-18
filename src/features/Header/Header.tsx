@@ -65,7 +65,6 @@ export const Header: React.FC = () => {
               gap: 2,
             }}
           >
-            {/* Logo */}
             <Box display="flex" alignItems="center" sx={{ flexShrink: 0 }}>
               <MainLogo
                 onClick={() => {
@@ -80,8 +79,6 @@ export const Header: React.FC = () => {
                 }}
               />
             </Box>
-
-            {/* Desktop Nav */}
             <Box
               sx={{
                 display: { xs: "none", lg: "flex" },
@@ -144,7 +141,6 @@ export const Header: React.FC = () => {
               </Button>
             </Box>
 
-            {/* Burger Icon */}
             <IconButton
               edge="end"
               color="inherit"
@@ -158,7 +154,6 @@ export const Header: React.FC = () => {
         </AppBar>
       </HideOnScroll>
 
-      {/* Mobile Drawer */}
       <Drawer
         slotProps={{
           paper: {

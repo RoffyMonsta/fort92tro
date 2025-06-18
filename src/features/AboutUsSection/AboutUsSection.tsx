@@ -16,7 +16,6 @@ export const AboutUsSection = () => {
         py: { xs: 8, md: 12 },
       }}
     >
-      {/* NAV item at the top left */}
       <Box
         sx={{
           display: "flex",
@@ -39,7 +38,6 @@ export const AboutUsSection = () => {
         </Typography>
       </Box>
 
-      {/* Centered content */}
       <Box
         sx={{
           maxWidth: "700px",

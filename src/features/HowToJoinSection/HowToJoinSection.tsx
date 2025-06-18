@@ -23,7 +23,6 @@ export const HowToJoinSection: React.FC = () => (
       gap: { xs: 4, md: 8 },
     }}
   >
-    {/* Логотип */}
     <Box flexShrink={0} sx={{ width: 80, height: 80 }}>
       <MainLogo
         className="white-icon"
@@ -31,7 +30,6 @@ export const HowToJoinSection: React.FC = () => (
       />
     </Box>
 
-    {/* Контент */}
     <Box
       sx={{
         flexGrow: 1,
@@ -55,7 +53,6 @@ export const HowToJoinSection: React.FC = () => (
         Як приєднатись
       </Typography>
 
-      {/* Steps */}
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3, mb: 6 }}>
         {steps.map((text, i) => (
           <Box
@@ -94,7 +91,6 @@ export const HowToJoinSection: React.FC = () => (
         ))}
       </Box>
 
-      {/* CTA Button */}
       <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
         <Button
           variant="contained"

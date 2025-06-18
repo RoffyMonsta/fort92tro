@@ -92,10 +92,9 @@ export const FaqSection: React.FC = () => {
             sx={{
               ...accordionItemStyles,
               position: "relative",
-              pl: 5, // add left padding so number doesn't overlap text
+              pl: 5,
             }}
           >
-            {/* Number in top-left corner */}
             <Typography
               className="faq-number"
               sx={{
@@ -105,13 +104,11 @@ export const FaqSection: React.FC = () => {
                 fontSize: "12px",
                 color: "#EBEBEB",
                 fontWeight: 200,
-                fontFamily: "e-Ukraine", // optional to match style
+                fontFamily: "e-Ukraine",
               }}
             >
               {String(idx + 1).padStart(2, "0")}
             </Typography>
-
-            {/* Main question text */}
             <Typography
               sx={{
                 fontSize: "20px",
@@ -143,7 +140,7 @@ export const FaqSection: React.FC = () => {
           sx={{
             ...accordionItemStyles,
             position: "relative",
-            pl: 5, // add left padding so number doesn't overlap text
+            pl: 5,
           }}
         >
           <Typography fontWeight={700}>Відкрити всі питання</Typography>
@@ -161,7 +158,6 @@ export const FaqSection: React.FC = () => {
                 mb: 2,
               }}
             >
-              {/* Number */}
               <Typography
                 sx={{
                   position: "absolute",
@@ -176,7 +172,6 @@ export const FaqSection: React.FC = () => {
                 {String(idx + faqItems.length + 1).padStart(2, "0")}
               </Typography>
 
-              {/* Question */}
               <Typography
                 sx={{
                   fontSize: "18px",
@@ -189,7 +184,6 @@ export const FaqSection: React.FC = () => {
                 {item.question}
               </Typography>
 
-              {/* Answer */}
               <Box sx={{ pl: 5 }}>{renderAnswer(item.answer)}</Box>
             </Box>
           ))}

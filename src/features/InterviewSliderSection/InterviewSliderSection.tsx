@@ -55,9 +55,9 @@ export const InterviewSliderSection: React.FC = () => {
                 "&:hover .title": { opacity: 0.85 },
               }}
             >
-              {/* Image */}
               <Box
                 component="img"
+                loading="lazy"
                 src={item.src}
                 alt={item.title}
                 sx={{
@@ -69,7 +69,6 @@ export const InterviewSliderSection: React.FC = () => {
                 }}
               />
 
-              {/* Content block */}
               <Box
                 sx={{
                   display: "flex",
@@ -78,7 +77,6 @@ export const InterviewSliderSection: React.FC = () => {
                   gap: 2,
                 }}
               >
-                {/* Force same height title box */}
                 <Typography
                   className="title"
                   fontWeight={200}

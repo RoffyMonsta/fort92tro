@@ -3,7 +3,6 @@ import { Box, Typography } from "@mui/material";
 
 export const FacebookNewsSection = () => {
   useEffect(() => {
-    // Завантажити Facebook SDK лише один раз
     if (!(window as any).FB) {
       const script = document.createElement("script");
       script.src =
@@ -53,7 +52,7 @@ export const FacebookNewsSection = () => {
         sx={{
           width: "100%",
           maxWidth: 500,
-          backgroundColor: "#fff",
+          backgroundColor: "#EBEBEB",
           borderRadius: 2,
           overflow: "hidden",
         }}

@@ -22,7 +22,6 @@ export const HeroSection: React.FC = () => {
         textShadow: "1px 1px 3px rgba(0,0,0,0.8)",
       }}
     >
-      {/* Top-left label */}
       <Box sx={{ position: "absolute", top: "10vh", left: "10vw" }}>
         <Typography
           variant="h6"
@@ -38,9 +37,7 @@ export const HeroSection: React.FC = () => {
         </Typography>
       </Box>
 
-      {/* Main call-to-action */}
       <Box sx={{ textAlign: "center", color: "#EBEBEB", px: 2 }}>
-        {/* "МОРДОР САМ СЕБЕ НЕ ЗНИЩИТЬ" */}
         <Typography
           sx={{
             fontFamily: "e-Ukraine",

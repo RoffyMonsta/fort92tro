@@ -1,3 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+
+TODO remove it later
+Disallow: /
+
+// Allow: /
+// Sitemap: https://www.fort92tro.com.ua/sitemap.xml

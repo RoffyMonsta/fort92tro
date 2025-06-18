@@ -23,6 +23,7 @@ export const SupportSection: React.FC = () => {
       >
         <Box
           component="img"
+          loading="lazy"
           src="/img/support_pic.png"
           alt="Support soldiers"
           sx={{
@@ -92,13 +93,13 @@ export const SupportSection: React.FC = () => {
               Банк одержувача: АТ КБ «ПриватБанк»
             </Typography>
             <Typography fontWeight={200} fontSize={16}>
-              МФО: 305299
+              МФО: 305000
             </Typography>
             <Typography fontWeight={200} fontSize={16}>
-              КОД ЄДРПОУ: 45190955
+              КОД ЄДРПОУ: 45000000
             </Typography>
             <Typography fontWeight={700} fontSize={16}>
-              РАХУНОК №: UA143052990000026004026009299
+              РАХУНОК №: UA000000000000000000000000000
             </Typography>
           </Box>
 
@@ -123,13 +124,13 @@ export const SupportSection: React.FC = () => {
               Банк одержувача: АТ КБ «ПриватБанк»
             </Typography>
             <Typography fontWeight={200} fontSize={16}>
-              МФО: 305299
+              МФО: 305000
             </Typography>
             <Typography fontWeight={200} fontSize={16}>
-              КОД ЄДРПОУ: 45190955
+              КОД ЄДРПОУ: 45000000
             </Typography>
             <Typography fontWeight={700} fontSize={16}>
-              РАХУНОК №: UA143052990000026004026009299
+              РАХУНОК №: UA000000000000000000000000000
             </Typography>
           </Box>
         </Stack>
@@ -152,6 +153,7 @@ export const SupportSection: React.FC = () => {
         >
           <Box
             component="img"
+            loading="lazy"
             src="/img/monobank_qr.png"
             alt="QR Monobank"
             sx={{

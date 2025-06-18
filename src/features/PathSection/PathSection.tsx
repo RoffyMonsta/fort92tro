@@ -41,7 +41,7 @@ export const PathSection = () => {
         backgroundSize: "2px 2px",
         px: 4,
         py: { xs: 8, md: 12 },
-        color: "#FFFFFF",
+        color: "#EBEBEB",
       }}
     >
       {/* Section title */}
@@ -82,6 +82,7 @@ export const PathSection = () => {
               {/* Left: Full image */}
               <Box sx={{ flex: 1, minWidth: 0 }}>
                 <img
+                  loading="lazy"
                   src={slide.image}
                   alt={`combat-${slide.year}`}
                   style={{
@@ -93,7 +94,6 @@ export const PathSection = () => {
                 />
               </Box>
 
-              {/* Middle: Text */}
               <Box
                 sx={{
                   flex: 1,
@@ -127,7 +127,6 @@ export const PathSection = () => {
                 </Typography>
               </Box>
 
-              {/* Right: Thumbnail + year + arrows */}
               <Box
                 sx={{
                   display: "flex",
@@ -138,14 +137,13 @@ export const PathSection = () => {
                   width: { xs: "100%", md: 150 },
                 }}
               >
-                {/* Thumbnail */}
                 <img
+                  loading="lazy"
                   src={slide.thumb}
                   alt={`thumb-${slide.year}`}
                   style={{ width: 120, height: "auto", borderRadius: 4 }}
                 />
 
-                {/* Arrows + year */}
                 <Box
                   display="flex"
                   alignItems="center"

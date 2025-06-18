@@ -27,7 +27,6 @@ export const RecruitmentSection: React.FC = () => (
       }}
     />
 
-    {/* внутрішній контент */}
     <Box
       sx={{
         position: "relative",
@@ -39,7 +38,6 @@ export const RecruitmentSection: React.FC = () => (
         gap: 4,
       }}
     >
-      {/* заголовки */}
       <Box
         sx={{
           display: "flex",
@@ -74,7 +72,6 @@ export const RecruitmentSection: React.FC = () => (
         </Typography>
       </Box>
 
-      {/* форма заявки */}
       <RecruitmentForm />
     </Box>
   </Box>

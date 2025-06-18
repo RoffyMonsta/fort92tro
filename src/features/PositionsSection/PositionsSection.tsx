@@ -15,7 +15,6 @@ export const PositionsSection: React.FC = () => {
         color: "#EBEBEB",
       }}
     >
-      {/* Section Header */}
       <Box display="flex" alignItems="center" gap={1} mb={4}>
         <ShieldIcon style={{ width: 24, height: 24 }} />
         <Typography
@@ -30,8 +29,6 @@ export const PositionsSection: React.FC = () => {
           Посади
         </Typography>
       </Box>
-
-      {/* Layout: Image + Accordion */}
       <Box
         sx={{
           display: "flex",
@@ -39,9 +36,9 @@ export const PositionsSection: React.FC = () => {
           gap: 4,
         }}
       >
-        {/* Image */}
         <Box
           component="img"
+          loading="lazy"
           src="/img/positions_pic.png"
           alt="Soldier"
           sx={{
@@ -53,7 +50,6 @@ export const PositionsSection: React.FC = () => {
           }}
         />
 
-        {/* Accordion + Button */}
         <Box flex={1}>
           <PositionsAccordion />
           <Button
